@@ -18,11 +18,9 @@ namespace appointmentApi.Models.Entities;
         public string? category { get; set; }
         public string? imageName { get; set; }
 
-        [NotMapped]
-        public List<GetDoctor> doctors = new();
+        public virtual ICollection<GetDoctor>? doctors { get; set; }
 
-        [NotMapped]
-        public List<Appointment> appointments = new();
+        public virtual ICollection<Appointment>? appointments { get; set; }
 
         [DefaultValue(false)]
         public bool isDeleted { get;  set; }

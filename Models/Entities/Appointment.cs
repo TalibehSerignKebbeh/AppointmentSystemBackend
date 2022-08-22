@@ -47,9 +47,8 @@ namespace appointmentApi.Models
          [NotMapped]
         public GetAppDoctor? doctor { get; set; }
 
+        [NotMapped]
         public Hospital? hospital { get; set; }
-
-
        
     }
 }

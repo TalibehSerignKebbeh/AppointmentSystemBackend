@@ -22,6 +22,8 @@ namespace appointmentApi
             CreateMap<User, Admin>();
             CreateMap<User, GetPatient>();
             CreateMap<User, GetDoctor>();
+            CreateMap<GetDoctor, User>();
+
             CreateMap<User, GetPatientDoctor>();
 
 

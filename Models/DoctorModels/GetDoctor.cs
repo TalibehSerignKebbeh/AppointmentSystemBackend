@@ -27,7 +27,5 @@ namespace Models
         public bool isApproved { get; set; }
         public bool isActive { get; set; }
         
-
-        
     }
 }

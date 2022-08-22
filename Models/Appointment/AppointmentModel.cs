@@ -14,6 +14,9 @@ namespace Models
          [Required(ErrorMessage ="time field is required")]
         public string? time { get; set; }
 
+        // public TimeOnly apptime { get; set; }
+        // public DateOnly appDateOnly { get; set; }
+
         [Required(ErrorMessage = "patient is required")]
         public int patientRefId { get; set; }
         public int doctorRefId { get; set; }

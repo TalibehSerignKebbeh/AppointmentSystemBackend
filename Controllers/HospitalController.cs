@@ -37,12 +37,12 @@ namespace appointmentApi.Controllers
         {
             var hospitals = await _context.hospitals.ToListAsync();
 
-            // foreach (var hospital in hospitals)
-            // {
-            //      hospital.doctors =  _context.users.Where(u => u.hospitalRefId == hospital.hospitalId).Select(u=> _mapper.Map<GetDoctor>(_context.users.Find(u.userId))).ToList();
-            //     hospital.appointments =  _context.appoinments.Where(ap => ap.hospitalRefId == hospital.hospitalId).ToList();
+            foreach (var hospital in hospitals)
+            {
+                hospital.appointments = await  _context.appoinments.Where(ap => ap.hospitalRefId == hospital.hospitalId).ToListAsync();
+                hospital.doctors = await _context.users.Where(u=>u.hospitalRefId == hospital.hospitalId).Select(u =>  _mapper.Map<GetDoctor>(u)).ToListAsync();
 
-            // }
+            }
             return Ok(hospitals);
 
         }

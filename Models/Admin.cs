@@ -5,6 +5,8 @@ namespace Models
     public class Admin
     {
         public string? fullName { get; set; }
+        public string? role { get; set; }
+
         
         [Required]
         public string? username { get; set; }

@@ -63,7 +63,9 @@ namespace appointmentApi.Controllers
         
         [HttpGet("patientDoctors")]
         public async Task<ActionResult<IEnumerable<GetPatientDoctor>>> GetPatientDocs(){
-            return await _context.users.Where(u => u.role == Roles.doctor).Select(d => _mapper.Map<GetPatientDoctor>(d)).ToListAsync();
+           var doctors = await _context.users.Where(u => u.role == Roles.doctor).Select(d => _mapper.Map<GetPatientDoctor>(d)).ToListAsync();
+            doctors.ForEach(doctor => doctor.hospital = _context.hospitals.Find(doctor.hospitalRefId));
+            return doctors;
         }
         
         [HttpGet("patients")]
@@ -75,7 +77,7 @@ namespace appointmentApi.Controllers
         public  async Task<ActionResult<User>> Login( AuthModel auth)
         {
             // var user = _services.Login(auth);
-            var user = await _context.users.FirstOrDefaultAsync(u => u.username == auth.loginKey && u.password == auth.password && u.isActive && !u.isDeleted);
+            var user = await _context.users.FirstOrDefaultAsync(u => u.username == auth.loginKey && u.password == auth.password  && !u.isDeleted);
              if (user != null)
              {
                 if (user.role == Roles.patient ) return Ok(_mapper.Map<GetPatient>(user));
