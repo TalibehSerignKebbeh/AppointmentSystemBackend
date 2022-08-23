@@ -1,2 +1,2 @@
 # AppointmentSystemBackend
-dotnet web api backend for appointment bookings in hospital
+dotnet web api backend for appointment bookings in hospitals
