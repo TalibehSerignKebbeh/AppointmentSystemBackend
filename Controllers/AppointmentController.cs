@@ -58,7 +58,7 @@ namespace appointmentApi.Controllers
         [HttpGet("PatientAppointments")]
         public async Task<ActionResult<GetPatientApp>> GetPatientApps( int userid)
         {
-           var appointments = await _context.appoinments.Where(a=>a.patientRefId == userid).ToListAsync();
+           var appointments = await _context.appoinments.Where(a=> a.patientRefId == userid && !a.isDeleted).ToListAsync();
             appointments.ForEach(app => app.doctor = _mapper.Map<GetAppDoctor>(_context.users.Find(app.doctorRefId)));
             if (appointments is not null)
             {
@@ -70,7 +70,7 @@ namespace appointmentApi.Controllers
         public async Task<ActionResult<IEnumerable<Appointment>>> GetAppointmentForDoctor(int doctorRefId)
         {
             
-          var appoinments = await _context.appoinments.Where(a=>a.doctorRefId == doctorRefId).ToListAsync();
+          var appoinments = await _context.appoinments.Where(a=>!a.isCancell && a.doctorRefId == doctorRefId && !a.isDeleted).ToListAsync();
             appoinments.ForEach(app => app.patient = _mapper.Map<GetAppPatient>(_context.users.Find(app.patientRefId)));
             return appoinments;
         }
@@ -84,7 +84,7 @@ namespace appointmentApi.Controllers
                 return NotFound($"Doctor with {doctorRefId} is not found");
 
             }
-            var appoinments = await _context.appoinments.Where(a=>a.doctorRefId == doctorRefId).ToListAsync();
+            var appoinments = await _context.appoinments.Where(a=>!a.isCancell && a.doctorRefId == doctorRefId && !a.isDeleted).ToListAsync();
             appoinments.ForEach(app => app.patient = _mapper.Map<GetAppPatient>(_context.users.Find(app.patientRefId)));
             return appoinments;
         }
@@ -137,8 +137,8 @@ namespace appointmentApi.Controllers
             var app = await _context.appoinments.FindAsync(appId);
             if (app is not null)
             {
-                app.isAccepted = false;
-                app.isCancell = false;
+                app.isAccepted = !app.isAccepted;
+                // app.isCancell = false;
                 _context.appoinments.Update(app);
                 await _context.SaveChangesAsync();
             return Ok(app);

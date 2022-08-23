@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Mr Mbye\\Documents\\React and Dotnet\\appointmentApi\\appointmentApi.csproj": {}
+    "C:\\Users\\Mr Mbye\\Documents\\React and Dotnet\\appointmentApi\\appointmentApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Mr Mbye\\Documents\\React and Dotnet\\appointmentApi\\appointmentApi.csproj": {
+    "C:\\Users\\Mr Mbye\\Documents\\React and Dotnet\\appointmentApi\\appointmentApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Mr Mbye\\Documents\\React and Dotnet\\appointmentApi\\appointmentApi.csproj",
+        "projectUniqueName": "C:\\Users\\Mr Mbye\\Documents\\React and Dotnet\\appointmentApi\\appointmentApi.csproj",
         "projectName": "appointmentApi",
-        "projectPath": "c:\\Users\\Mr Mbye\\Documents\\React and Dotnet\\appointmentApi\\appointmentApi.csproj",
+        "projectPath": "C:\\Users\\Mr Mbye\\Documents\\React and Dotnet\\appointmentApi\\appointmentApi.csproj",
         "packagesPath": "C:\\Users\\Mr Mbye\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Mr Mbye\\Documents\\React and Dotnet\\appointmentApi\\obj\\",
+        "outputPath": "C:\\Users\\Mr Mbye\\Documents\\React and Dotnet\\appointmentApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mr Mbye\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -40,6 +40,7 @@ namespace appointmentApi.Models
 
         [DefaultValue(false)]
         public bool isAccepted { get; set; }
+        [DefaultValue(false)]
         public bool isDeleted { get; set; }
 
         [NotMapped]

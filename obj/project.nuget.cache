@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UDSt1kJ3x7MRYgzZgbKTw0oDZKt7ag5d6N00qCzIlFTJd2WVV85/0eObQ86CR2oFiqfLWG4ByqY4PPKv+/pkBQ==",
+  "dgSpecHash": "Fk2BezzyVxOZJ+2ymfomZHjv69XBFssUB3qZCDVWddbWLNaXP8ulACDuRdPbXLWNVKBCLJsM5G+dqFLVkNDIeg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Mr Mbye\\Documents\\React and Dotnet\\appointmentApi\\appointmentApi.csproj",
+  "projectFilePath": "C:\\Users\\Mr Mbye\\Documents\\React and Dotnet\\appointmentApi\\appointmentApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mr Mbye\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Mr Mbye\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
